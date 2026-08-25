@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int count(int n)
+{
+    int digits = 0;
+
+    if(n == 0)
+        return 1;
+
+    while(n != 0)
+    {
+        n = n / 10;
+        digits++;
+    }
+
+    return digits;
+}
+
+int count(int arr[], int n)
+{
+    return n;
+}
+
+int count(char arr[], int n, char ch)
+{
+    int total = 0;
+
+    for(int i = 0; i < n; i++)
+    {
+        if(arr[i] == ch)
+            total++;
+    }
+
+    return total;
+}
+
+int main()
+{
+    int a[] = {10, 20, 30, 40};
+    char b[] = {'a', 'b', 'a', 'c'};
+
+    cout << "Number of digits = "
+         << count(12345) << endl;
+
+    cout << "Number of array elements = "
+         << count(a, 4) << endl;
+
+    cout << "Character occurrences = "
+         << count(b, 4, 'a') << endl;
+
+    return 0;
+}
